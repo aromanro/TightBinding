@@ -1,7 +1,7 @@
 # TightBinding
 Semi-empirical tight-binding computation of the electronic structure of semiconductors
 
-The description will be on https://compphys.go.ro
+The description is on the blog: https://compphys.go.ro/tight-binding/
 
 ### PROGRAM IN ACTION
 
