@@ -21,10 +21,10 @@ namespace TightBinding
 
 		const Eigen::VectorXd& eigenvalues() const { return solver.eigenvalues(); }
 	protected:
-		static std::complex<double> g0(const Vector3D<double>& k);
-		static std::complex<double> g1(const Vector3D<double>& k);
-		static std::complex<double> g2(const Vector3D<double>& k);
-		static std::complex<double> g3(const Vector3D<double>& k);
+		inline static std::complex<double> g0(const Vector3D<double>& k);
+		inline static std::complex<double> g1(const Vector3D<double>& k);
+		inline static std::complex<double> g2(const Vector3D<double>& k);
+		inline static std::complex<double> g3(const Vector3D<double>& k);
 
 		const Material& m_material;
 

@@ -13,6 +13,37 @@ namespace TightBinding
 
 	}
 
+
+	inline std::complex<double> Hamiltonian::g0(const Vector3D<double>& k)
+	{
+		const Vector3D<double> v = k * M_PI / 2.;
+
+		return std::complex<double>(cos(v.X) * cos(v.Y) * cos(v.Z), -sin(v.X) * sin(v.Y) * sin(v.Z));
+	}
+	
+	inline std::complex<double> Hamiltonian::g1(const Vector3D<double>& k)
+	{
+		const Vector3D<double> v = k * M_PI / 2.;
+
+		return std::complex<double>(-cos(v.X) * sin(v.Y) * sin(v.Z), sin(v.X) * cos(v.Y) * cos(v.Z));
+	}
+	
+
+	inline std::complex<double> Hamiltonian::g2(const Vector3D<double>& k)
+	{
+		const Vector3D<double> v = k * M_PI / 2.;
+
+		return std::complex<double>(-sin(v.X) * cos(v.Y) * sin(v.Z), cos(v.X) * sin(v.Y) * cos(v.Z));
+	}
+	
+
+	inline std::complex<double> Hamiltonian::g3(const Vector3D<double>& k)
+	{
+		const Vector3D<double> v = k * M_PI / 2.;
+
+		return std::complex<double>(-sin(v.X) * sin(v.Y) * cos(v.Z), cos(v.X) * cos(v.Y) * sin(v.Z));
+	}
+
 	void Hamiltonian::SetMatrix(const Vector3D<double>& k)
 	{
 		const std::complex<double> g0v = g0(k);
@@ -110,38 +141,6 @@ namespace TightBinding
 
 		assert(solver.info() == Eigen::ComputationInfo::Success);
 	}
-
-
-	std::complex<double> Hamiltonian::g0(const Vector3D<double>& k)
-	{
-		const Vector3D<double> v = k * M_PI / 2.;
-
-		return std::complex<double>(cos(v.X) * cos(v.Y) * cos(v.Z), -sin(v.X) * sin(v.Y) * sin(v.Z));
-	}
-	
-	std::complex<double> Hamiltonian::g1(const Vector3D<double>& k)
-	{
-		const Vector3D<double> v = k * M_PI / 2.;
-
-		return std::complex<double>(-cos(v.X) * sin(v.Y) * sin(v.Z), sin(v.X) * cos(v.Y) * cos(v.Z));
-	}
-	
-
-	std::complex<double> Hamiltonian::g2(const Vector3D<double>& k)
-	{
-		const Vector3D<double> v = k * M_PI / 2.;
-
-		return std::complex<double>(-sin(v.X) * cos(v.Y) * sin(v.Z), cos(v.X) * sin(v.Y) * cos(v.Z));
-	}
-	
-
-	std::complex<double> Hamiltonian::g3(const Vector3D<double>& k)
-	{
-		const Vector3D<double> v = k * M_PI / 2.;
-
-		return std::complex<double>(-sin(v.X) * sin(v.Y) * cos(v.Z), cos(v.X) * cos(v.Y) * sin(v.Z));
-	}
-
 
 
 }
