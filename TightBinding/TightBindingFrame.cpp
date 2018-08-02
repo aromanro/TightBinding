@@ -22,6 +22,7 @@ EVT_MENU(wxID_EXIT, TightBindingFrame::OnExit)
 EVT_MENU(wxID_PREFERENCES, TightBindingFrame::OnOptions)
 EVT_MENU(wxID_ABOUT, TightBindingFrame::OnAbout)
 EVT_TIMER(101, TightBindingFrame::OnTimer)
+EVT_ERASE_BACKGROUND(TightBindingFrame::OnEraseBackground)
 wxEND_EVENT_TABLE()
 
 
@@ -265,6 +266,12 @@ void TightBindingFrame::OnTimer(wxTimerEvent& WXUNUSED(event))
 		Refresh();
 	}
 }
+
+void TightBindingFrame::OnEraseBackground(wxEraseEvent &event)
+{
+  event.Skip(false);
+}
+
 
 
 void TightBindingFrame::OnExit(wxCommandEvent& /*event*/)
