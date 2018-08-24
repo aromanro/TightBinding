@@ -62,7 +62,7 @@ void OptionsFrame::CreateControls()
 	label = new wxStaticText(this, wxID_STATIC, "&Material:", wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT);
 	box->Add(label, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 	
-	wxString materialStrings[] = { "C", "Si", "Ge", "Sn", "SiC", "AlP", "AlAs", "AlSb", "GaP", "GaAs", "GaSb", "InP", "InAs", "InSb", "ZnSe", "ZnTe" };
+	static const wxString materialStrings[] = { "C", "Si", "Ge", "Sn", "SiC", "AlP", "AlAs", "AlSb", "GaP", "GaAs", "GaSb", "InP", "InAs", "InSb", "ZnSe", "ZnTe" };
 
 	wxChoice* materialChoice = new wxChoice (this, ID_MATERIAL, wxDefaultPosition, wxSize(60, -1), WXSIZEOF(materialStrings), materialStrings, 0 );
 	materialChoice->SetStringSelection(options.materialName);
