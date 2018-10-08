@@ -95,6 +95,8 @@ void TightBindingFrame::DestroyVTK()
 	if (pChart) pChart->Delete();
 	if (pRenderer) pRenderer->Delete();
 	if (pContextView) pContextView->Delete();
+
+	currentOptions.Close();
 }
 
 
