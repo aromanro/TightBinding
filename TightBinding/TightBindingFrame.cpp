@@ -2,6 +2,9 @@
 
 #include "OptionsFrame.h"
 
+#include "wx/aboutdlg.h"
+#include "wx/statline.h"
+#include "wx/generic/aboutdlgg.h"
 
 #include <vtkAutoInit.h>
 
@@ -283,7 +286,24 @@ void TightBindingFrame::OnExit(wxCommandEvent& /*event*/)
 
 void TightBindingFrame::OnAbout(wxCommandEvent& /*event*/)
 {
-	wxMessageBox("Tight Binding ver 1.0", "About TightBinding", wxOK | wxICON_INFORMATION);
+	wxAboutDialogInfo info;
+
+	info.SetName("Tight Binding");
+
+	static const int majorVer = 1;
+	static const int minorVer = 0;
+	wxString verStr = wxString::Format("%d.%d", majorVer, minorVer);
+	info.SetVersion(verStr,	wxString::Format("Version %s", verStr));
+
+	info.SetDescription("   Tight Binding Application   ");
+	info.SetLicense("GNU GPL v3.0, see LICENSE file for details");
+
+	info.AddDeveloper("Adrian Roman");
+
+	info.SetWebSite("https://github.com/aromanro/TightBinding", "GitHub repository");
+
+
+	wxAboutBox(info, this);	
 }
 
 
