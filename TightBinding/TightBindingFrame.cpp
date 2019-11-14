@@ -281,6 +281,7 @@ void TightBindingFrame::OnEraseBackground(wxEraseEvent &event)
 
 void TightBindingFrame::OnExit(wxCommandEvent& /*event*/)
 {
+	StopThreads(true);
 	Close(true);
 }
 
