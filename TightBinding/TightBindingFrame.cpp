@@ -244,7 +244,7 @@ void TightBindingFrame::Compute()
 	runningThreads = nrThreads;
 
 	const unsigned int nrPoints = bandStructure.GetPointsNumber();
-	const unsigned int interval =  nrPoints / nrThreads;
+	const unsigned int interval = static_cast<unsigned int>(ceil(static_cast<double>(nrPoints) / nrThreads));
 
 	unsigned int startPoint = 0;
 	for (unsigned int i = 0; i < nrThreads; ++i)
