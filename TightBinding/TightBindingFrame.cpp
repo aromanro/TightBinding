@@ -22,6 +22,7 @@ wxBEGIN_EVENT_TABLE(TightBindingFrame, wxFrame)
 EVT_MENU(ID_CALCULATE, TightBindingFrame::OnCalculate)
 EVT_UPDATE_UI(ID_CALCULATE, TightBindingFrame::OnUpdateCalculate)
 EVT_MENU(wxID_EXIT, TightBindingFrame::OnExit)
+EVT_CLOSE(TightBindingFrame::OnClose)
 EVT_MENU(wxID_PREFERENCES, TightBindingFrame::OnOptions)
 EVT_MENU(wxID_ABOUT, TightBindingFrame::OnAbout)
 EVT_TIMER(101, TightBindingFrame::OnTimer)
@@ -280,6 +281,12 @@ void TightBindingFrame::OnEraseBackground(wxEraseEvent &event)
 
 
 void TightBindingFrame::OnExit(wxCommandEvent& /*event*/)
+{
+	StopThreads(true);
+	Close(true);
+}
+
+void TightBindingFrame::OnClose(wxCloseEvent& /*event*/)
 {
 	StopThreads(true);
 	Close(true);
