@@ -286,10 +286,11 @@ void TightBindingFrame::OnExit(wxCommandEvent& /*event*/)
 	Close(true);
 }
 
-void TightBindingFrame::OnClose(wxCloseEvent& /*event*/)
+void TightBindingFrame::OnClose(wxCloseEvent& event)
 {
 	StopThreads(true);
-	Close(true);
+
+	event.Skip();
 }
 
 void TightBindingFrame::OnAbout(wxCommandEvent& /*event*/)
