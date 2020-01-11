@@ -219,7 +219,9 @@ void TightBindingFrame::OnOptions(wxCommandEvent& /*event*/)
 	optionsFrame->options = currentOptions;
 	if (wxID_OK == optionsFrame->ShowModal())
 	{
+		currentOptions.Close();
 		currentOptions = optionsFrame->options;
+		currentOptions.Open();
 		currentOptions.Save();
 	}
 
