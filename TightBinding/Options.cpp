@@ -54,6 +54,7 @@ void Options::Close()
 
 void Options::Load()
 {
+	Open();
 	wxConfigBase *conf=wxConfigBase::Get(false);
 	if (conf)
 	{
@@ -62,10 +63,12 @@ void Options::Load()
 		nrPoints = conf->ReadLong("/nrPoints", 600);
 		pathNo = conf->ReadLong("/pathNo", 0);
 	}
+	Close();
 }
 
 void Options::Save()
 {
+	Open();
 	wxConfigBase *conf=wxConfigBase::Get(false);
 	if (conf)
 	{
@@ -77,4 +80,5 @@ void Options::Save()
 
 	if (m_fileconfig)
 		m_fileconfig->Flush();
+	Close();
 }

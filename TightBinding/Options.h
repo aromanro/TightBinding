@@ -44,9 +44,6 @@ public:
 	void Load();
 	void Save();
 
-	void Open();
-	void Close();
-
 	int nrThreads;
 
 	wxString materialName;
@@ -57,6 +54,9 @@ public:
 	std::vector<std::vector<std::string>> paths;
 
 protected:
+	void Open();
+	void Close();
+
 	wxFileConfig *m_fileconfig;
 };
 
