@@ -1,0 +1,16 @@
+
+*.dat
+.vs/TightBinding/v15/.suo
+*.db
+*.ipch
+.vs/TightBinding/v16/.suo
+*.log
+TightBinding/x64/Debug/TightBinding.tlog/unsuccessfulbuild
+*.obj
+*.tlog
+*.txt
+*.pdb
+*.exe
+*.lastcodeanalysissucceeded
+*.ipdb
+*.iobj
