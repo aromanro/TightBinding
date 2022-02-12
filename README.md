@@ -1,6 +1,8 @@
 # TightBinding
 Semi-empirical tight-binding computation of the electronic structure of semiconductors
 
+[![CodeFactor](https://www.codefactor.io/repository/github/aromanro/tightbinding/badge)](https://www.codefactor.io/repository/github/aromanro/tightbinding)
+
 The description is on the blog: https://compphys.go.ro/tight-binding/
 
 ### PROGRAM IN ACTION
