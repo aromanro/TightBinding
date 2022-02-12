@@ -23,5 +23,5 @@ class TightBindingApp  : public wxApp
 public:
 	TightBindingFrame * frame = nullptr;
 
-	virtual bool OnInit() override;
+	bool OnInit() override;
 };

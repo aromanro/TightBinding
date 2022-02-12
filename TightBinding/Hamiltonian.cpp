@@ -10,7 +10,6 @@ namespace TightBinding
 	Hamiltonian::Hamiltonian(const Material& material)
 		: m_material(material)
 	{
-
 	}
 
 

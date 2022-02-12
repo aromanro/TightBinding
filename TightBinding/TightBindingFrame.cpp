@@ -211,7 +211,6 @@ bool TightBindingFrame::isFinished() const
 
 void TightBindingFrame::OnOptions(wxCommandEvent& /*event*/)
 {
-
 	OptionsFrame *optionsFrame = new OptionsFrame("Options", this);
 	optionsFrame->options = currentOptions;
 	if (wxID_OK == optionsFrame->ShowModal())
