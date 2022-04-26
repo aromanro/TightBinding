@@ -18,14 +18,12 @@
 wxDECLARE_APP(TightBindingApp);
 
 OptionsFrame::OptionsFrame(const wxString & title, wxWindow* parent)
-	   : wxDialog(parent, wxID_ANY, title, wxDefaultPosition, wxSize(400, 200))
+	   : wxDialog(parent, wxID_ANY, title, wxDefaultPosition, wxSize(360, 150))
 {
 	CreateControls();
 
 	Centre();
 }
-
-
 
 
 
@@ -37,7 +35,9 @@ void OptionsFrame::CreateControls()
 
 	// box with margin to contain option controls
 	wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
-	vbox->Add(boxSizer, 0, wxALIGN_CENTER_HORIZONTAL| wxGROW | wxALL, 5);
+	vbox->Add(boxSizer, 0, wxGROW, 5);
+
+	boxSizer->AddSpacer(5);
 
 	// ******************************************************************
 	// now option controls
@@ -45,51 +45,56 @@ void OptionsFrame::CreateControls()
 	// nr threads 
 
 	wxBoxSizer* box = new wxBoxSizer(wxHORIZONTAL);
-	boxSizer->Add(box, 0, wxGROW|wxALL, 5);
+
+	boxSizer->Add(box, 0, wxGROW, 5);
 
 	wxStaticText* label = new wxStaticText(this, wxID_STATIC, "&Threads:", wxDefaultPosition, wxSize(60, -1), wxALIGN_RIGHT);
-	box->Add(label, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	box->Add(label, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	
 	wxString str = wxString::Format(wxT("%i"), options.nrThreads);
 	wxTextCtrl* nrThreadsCtrl = new wxTextCtrl(this, ID_NRTHREADS, str, wxDefaultPosition, wxSize(60, -1), 0);
-	box->Add(nrThreadsCtrl, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	box->Add(nrThreadsCtrl, 0, wxALIGN_CENTER_VERTICAL, 5);
 
 
-	box->Add(5, 5, 1, wxALIGN_CENTER_VERTICAL|wxALL, 5); // pushes to the right
+	box->Add(5, 5, 1, wxALIGN_CENTER_VERTICAL, 5); // pushes to the right
 
 	// material
 
 	label = new wxStaticText(this, wxID_STATIC, "&Material:", wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT);
-	box->Add(label, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	box->Add(label, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	
 	static const wxString materialStrings[] = { "C", "Si", "Ge", "Sn", "SiC", "AlP", "AlAs", "AlSb", "GaP", "GaAs", "GaSb", "InP", "InAs", "InSb", "ZnSe", "ZnTe" };
 
 	wxChoice* materialChoice = new wxChoice (this, ID_MATERIAL, wxDefaultPosition, wxSize(60, -1), WXSIZEOF(materialStrings), materialStrings, 0 );
 	materialChoice->SetStringSelection(options.materialName);
-	box->Add(materialChoice, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	box->Add(materialChoice, 0, wxALIGN_CENTER_VERTICAL, 5);
+
+	box->AddSpacer(5);
 
 	// next line
 
+	boxSizer->AddSpacer(5);
+
 	box = new wxBoxSizer(wxHORIZONTAL);
-	boxSizer->Add(box, 0, wxGROW|wxALL, 5);
+	boxSizer->Add(box, 0, wxGROW, 5);
 	
 	// nr points
 
 	label = new wxStaticText(this, wxID_STATIC, "Nr. &Points:", wxDefaultPosition, wxSize(60, -1), wxALIGN_RIGHT);
-	box->Add(label, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	box->Add(label, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	
 	str = wxString::Format(wxT("%i"), options.nrPoints);
 	wxTextCtrl* nrPointsCtrl = new wxTextCtrl ( this, ID_NRPOINTS, str, wxDefaultPosition, wxSize(60, -1), 0 );
-	box->Add(nrPointsCtrl, 0, wxGROW|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	box->Add(nrPointsCtrl, 0, wxGROW, 5);
 
 
-	box->Add(5, 5, 1, wxALIGN_CENTER_VERTICAL|wxALL, 5); // pushes to the right
+	box->Add(5, 5, 1, wxALIGN_CENTER_VERTICAL, 5); // pushes to the right
 	
 
 	// path
 
 	label = new wxStaticText(this, wxID_STATIC, "&Path:", wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT);
-	box->Add(label, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	box->Add(label, 0, wxALIGN_CENTER_VERTICAL, 5);
 	
 	wxString *pathStrings = new wxString[options.paths.size()];
 
@@ -107,9 +112,11 @@ void OptionsFrame::CreateControls()
 
 	wxChoice* pathChoice = new wxChoice (this, ID_PATH, wxDefaultPosition, wxSize(160, -1), options.paths.size(), pathStrings, 0 );
 	pathChoice->SetSelection(options.pathNo);
-	box->Add(pathChoice, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	box->Add(pathChoice, 0, wxALIGN_CENTER_VERTICAL, 5);
 
 	delete[] pathStrings;
+
+	box->AddSpacer(5);
 
 	// ******************************************************************
 	// setting validators
@@ -134,9 +141,10 @@ void OptionsFrame::CreateControls()
 	// ******************************************************************
 
 	// divider line
+	boxSizer->AddSpacer(5);
 
 	wxStaticLine* line = new wxStaticLine(this, wxID_STATIC, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL);
-	boxSizer->Add(line, 0, wxGROW|wxALL, 5);
+	boxSizer->Add(line, 0, wxGROW, 5);
 
 	// bottom box with ok & cancel buttons
 
