@@ -45,7 +45,7 @@ namespace TightBinding
 				res.back().push_back(eigenvals(level));
 		}
 
-		return std::move(res);
+		return res;
 	}
 
 }
