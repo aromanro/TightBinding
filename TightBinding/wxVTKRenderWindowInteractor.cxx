@@ -163,7 +163,7 @@ END_EVENT_TABLE()
 #include <vtkVersionMacros.h>
 
 //vtkCxxRevisionMacro(wxVTKRenderWindowInteractor, "$Revision$")
-vtkInstantiatorNewMacro(wxVTKRenderWindowInteractor)
+//vtkInstantiatorNewMacro(wxVTKRenderWindowInteractor)
 
 #if defined(__WXGTK__) && defined(USE_WXGLCANVAS)
 static int wxvtk_attributes[]={

@@ -8,9 +8,6 @@ namespace TightBinding
 	{
 	}
 
-
-
-
 	void BandStructure::Initialize(std::vector<std::string> path, unsigned int nrPoints)
 	{
 		kpoints.clear();

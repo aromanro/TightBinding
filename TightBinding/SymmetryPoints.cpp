@@ -3,7 +3,6 @@
 namespace TightBinding
 {
 
-
 	SymmetryPoints::SymmetryPoints()
 	{
 		symmetryPoints["L"] = SymmetryPoint("L", Vector3D<double>(0.5, 0.5, 0.5));
@@ -13,9 +12,6 @@ namespace TightBinding
 		symmetryPoints["K"] = SymmetryPoint("K", Vector3D<double>(0.75, 0.75, 0.));
 		symmetryPoints["U"] = SymmetryPoint("U", Vector3D<double>(1., 0.25, 0.25));
 	}
-
-
-
 
 	std::vector<Vector3D<double>> SymmetryPoints::GeneratePoints(const std::vector<std::string>& path, unsigned int nrPoints, std::vector<unsigned int>& symmetryPointsPositions)
 	{
