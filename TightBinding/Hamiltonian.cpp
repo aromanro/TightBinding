@@ -15,14 +15,14 @@ namespace TightBinding
 
 	inline std::complex<double> Hamiltonian::g0(const Vector3D<double>& k)
 	{
-		const Vector3D<double> v = k * M_PI / 2.;
+		const Vector3D<double> v = k * M_PI * 0.5;
 
 		return std::complex<double>(cos(v.X) * cos(v.Y) * cos(v.Z), -sin(v.X) * sin(v.Y) * sin(v.Z));
 	}
 	
 	inline std::complex<double> Hamiltonian::g1(const Vector3D<double>& k)
 	{
-		const Vector3D<double> v = k * M_PI / 2.;
+		const Vector3D<double> v = k * M_PI * 0.5;
 
 		return std::complex<double>(-cos(v.X) * sin(v.Y) * sin(v.Z), sin(v.X) * cos(v.Y) * cos(v.Z));
 	}
@@ -30,7 +30,7 @@ namespace TightBinding
 
 	inline std::complex<double> Hamiltonian::g2(const Vector3D<double>& k)
 	{
-		const Vector3D<double> v = k * M_PI / 2.;
+		const Vector3D<double> v = k * M_PI * 0.5;
 
 		return std::complex<double>(-sin(v.X) * cos(v.Y) * sin(v.Z), cos(v.X) * sin(v.Y) * cos(v.Z));
 	}
@@ -38,7 +38,7 @@ namespace TightBinding
 
 	inline std::complex<double> Hamiltonian::g3(const Vector3D<double>& k)
 	{
-		const Vector3D<double> v = k * M_PI / 2.;
+		const Vector3D<double> v = k * M_PI * 0.5;
 
 		return std::complex<double>(-sin(v.X) * sin(v.Y) * cos(v.Z), cos(v.X) * cos(v.Y) * sin(v.Z));
 	}
