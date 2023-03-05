@@ -1,6 +1,6 @@
 #pragma once
 
-#include <map>
+#include <unordered_map>
 #include <string>
 
 namespace TightBinding
@@ -41,7 +41,10 @@ namespace TightBinding
 	public:
 		Materials();
 
-		std::map<std::string, Material> materials;
+		const Material& getMaterial(const std::string& matName);
+
+	protected:
+		std::unordered_map<std::string, Material> materials;
 	};
 
 }

@@ -32,5 +32,8 @@ namespace TightBinding
 		materials["ZnTe"] = Material("ZnTe", -9.8150, 1.4834, 0.935, 5.2666, 7.0834, 8.2666, -6.5765, 2.7951, 5.467, 5.9827, 5.8199, 1.3196, 0.);
 	}
 
-
+	const Material& Materials::getMaterial(const std::string& matName)
+	{
+		return materials[matName];
+	}
 }
