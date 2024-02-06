@@ -20,7 +20,8 @@ namespace TightBinding
 		void Diagonalize();
 
 		const Eigen::VectorXd& eigenvalues() const { return solver.eigenvalues(); }
-	protected:
+
+	private:
 		inline static std::complex<double> g0(const Vector3D<double>& k);
 		inline static std::complex<double> g1(const Vector3D<double>& k);
 		inline static std::complex<double> g2(const Vector3D<double>& k);

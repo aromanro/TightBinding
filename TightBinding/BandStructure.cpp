@@ -4,10 +4,6 @@
 namespace TightBinding
 {
 
-	BandStructure::BandStructure()
-	{
-	}
-
 	void BandStructure::Initialize(std::vector<std::string> path, unsigned int nrPoints)
 	{
 		kpoints.clear();
@@ -22,7 +18,7 @@ namespace TightBinding
 	}
 
 
-	std::vector<std::vector<double>> BandStructure::Compute(const Material& material, unsigned int startPoint, unsigned int endPoint, std::atomic_bool& terminate)
+	std::vector<std::vector<double>> BandStructure::Compute(const Material& material, unsigned int startPoint, unsigned int endPoint, std::atomic_bool& terminate) const
 	{	
 		std::vector<std::vector<double>> res;
 

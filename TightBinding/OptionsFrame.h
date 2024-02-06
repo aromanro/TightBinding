@@ -20,11 +20,11 @@
 class OptionsFrame : public wxDialog
 {
 public:
-	OptionsFrame(const wxString& title, wxWindow* parent = NULL);
+	OptionsFrame(const wxString& title, wxWindow* parent = nullptr);
+
+	void CreateControls();
+	bool TransferDataFromWindow() override;
 
 	Options options;
-	void CreateControls();
-
-	bool TransferDataFromWindow() override;
 };
 

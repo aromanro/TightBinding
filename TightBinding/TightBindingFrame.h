@@ -53,7 +53,7 @@ class TightBindingFrame : public wxFrame
 {
 public:
 	TightBindingFrame(const wxString& title, const wxPoint& pos, const wxSize& size);
-	~TightBindingFrame();
+	~TightBindingFrame() override;
 
 
 	std::atomic_int runningThreads;

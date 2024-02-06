@@ -14,12 +14,10 @@ public:
 	TBThread(const Options& options, TightBindingFrame* frame, unsigned int startPoint, unsigned int endPoint);
 	~TBThread();
 
-
 	void Start();
 	void join();
 
 	void Terminate();
-
 
 	const Options& m_options;
 
@@ -28,10 +26,9 @@ public:
 	unsigned int m_startPoint;
 	unsigned int m_endPoint;
 
-
 	std::vector<std::vector<double>> results;
 
-protected:
+private:
 	void Calculate();
 
 	std::thread mThread;

@@ -13,8 +13,7 @@ namespace TightBinding
 	class SymmetryPoint
 	{
 	public:
-		SymmetryPoint() {}
-
+		SymmetryPoint() = default;
 		SymmetryPoint(const std::string& Name, const Vector3D<double> pos) : name(Name), position(pos) {}
 
 		SymmetryPoint(const SymmetryPoint& sym)

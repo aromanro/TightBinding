@@ -41,9 +41,9 @@ namespace TightBinding
 	public:
 		Materials();
 
-		const Material& getMaterial(const std::string& matName);
+		const Material& getMaterial(const std::string& matName) const;
 
-	protected:
+	private:
 		std::unordered_map<std::string, Material> materials;
 	};
 

@@ -53,7 +53,7 @@ public:
 
 	std::vector<std::vector<std::string>> paths;
 
-protected:
+private:
 	void Open();
 	void Close();
 
