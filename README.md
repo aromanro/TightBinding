@@ -13,7 +13,7 @@ The project compiles on Windows with Visual Studio 2026 (the code can be compile
 ### LIBRARIES
 
 The program requires the typical VC++ runtime libraries.
-Additional libraries needed are VTK http://www.fftw.org/ and wxWidgets https://wxwidgets.org/.
+Additional libraries needed are VTK https://vtk.org/ and wxWidgets https://wxwidgets.org/.
 
 ### PROGRAM IN ACTION
 
